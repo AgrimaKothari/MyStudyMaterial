@@ -1,0 +1,31 @@
+sudo apt-get update is command for updating
+sudo useradd mom - adding new user
+sudo usermod -a -G nurses mom -> adds mom to group nurses
+sudo usermod -a -g nurses mom -> adds mom to group nurses and removes from default group "mom" which gets created on creating a new user
+sudo userdel mom -> deleting a user
+
+
+upgrade any software/ install latest version:
+$ sudo apt-get install <google-chrome-stable>
+
+Set java path:
+To get location of java:
+$ which java && which javac && java -version
+
+alternatives available:
+sudo update-alternatives --config java
+
+options will be displayed- select manual one
+again run above command to check correct option is selected(you'll see * before selected opition)
+
+To edit and readonly file using "xed" editor:
+sudo xed /etc/environment
+Add below lines in environment file:
+JAVA_HOME=/usr/lib/jvm/java-8-oracle
+JRE_HOME=/usr/lib/jvm/java-8-oracle/jre
+
+to set the value
+source /etc/environment: 
+
+check for the variable values:
+echo $JAVA_HOME

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project name="Hello World" default="run" basedir="">
+
+<target name="compile"> 
+	<javac srcdir="/home/agrima/Study Material/Ant" destdir="/home/agrima/Study Material/Ant/bin" includes="app.java" includeantruntime="true"></javac>
+	</target>
+	
+	<target name="run" depends="compile"> 
+		<java classname="app"></java>
+		</target>
+
+<target name="three" > 
+		<echo>in third file</echo>
+		</target>
+</project>

@@ -1,0 +1,6 @@
+sudo apt-get update is command for updating
+sudo useradd mom - adding new user
+sudo usermod -a -G nurses mom -> adds mom to group nurses
+sudo usermod -a -g nurses mom -> adds mom to group nurses and removes from default group "mom" which gets created on creating a new user
+sudo userdel mom -> deleting a user
+

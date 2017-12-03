@@ -1,0 +1,52 @@
+#Numerical functions
+# DIV()- quotient
+# MOD()- remender
+SELECT CEIL(-32.23);
+SELECT FLOOR(-32.23);
+SELECT EXP(5);
+SELECT LOG(2);
+SELECT LOG10(2);
+SELECT POW(2,2);
+SELECT GREATEST(5,3,4,2,5,88,85,4);
+SELECT LEAST(5,3,4,2,5,88,85,4);
+SELECT RADIANS(180);
+SELECT SQRT(9);
+SELECT TRUNCATE(253.25698,2);
+SELECT RAND();
+
+# String functions
+SELECT CONCAT('hello','world','!');
+SELECT CONCAT(name, ' studies ',subject)
+FROM students;
+SELECT UPPER('hi there');
+SELECT LOWER('hi JEDF');
+SELECT TRIM('   sdvsd sd sd   '); # ddoes not remove spaces present in between
+SELECT SUBSTR('Hi how are u',4,3);
+SELECT LEFT('HI How are u',3);
+SELECT RIGHT('HI How are u',3);
+SELECT LENGTH('HI How are u'); # space occupied in memory
+SELECT CHAR_LENGTH('HI How are u'); # Length of string
+SELECT INSERT('Hello Word', 7,5,'World');
+SELECT REPEAT('Hello',10);
+SELECT REPLACE('Hello Word','Word','Hello');
+SELECT REVERSE('Agrima');
+SELECT STRCMP('Agrima','agrima');
+
+#Date functions
+SELECT ADDDATE('1992-12-25', INTERVAL 25 DAY);
+SELECT ADDDATE('1992-12-25', INTERVAL 25 MONTH);
+SELECT ADDDATE('1992-12-25', INTERVAL 25 YEAR);
+
+SELECT SUBDATE('1992-12-25', INTERVAL 25 DAY);
+SELECT SUBDATE('1992-12-25', INTERVAL 25 MONTH);
+SELECT SUBDATE('1992-12-25', INTERVAL 25 YEAR);
+
+SELECT CURDATE();# system date
+SELECT CURTIME();# sys time
+SELECT NOW();
+SELECT MAKEDATE(2013,251);# returns 251 of 2013
+SELECT DAYNAME('2017-11-18');
+SELECT MONTHNAME('2017-11-18');
+SELECT TIMEDIFF('2017-11-18 15:25:23', '2017-11-19 15:25:23');
+SELECT TIME_TO_SEC('2017-11-18 15:25:23');
+SELECT UNIX_TIMESTAMP(); # diff from 1 jan 1970

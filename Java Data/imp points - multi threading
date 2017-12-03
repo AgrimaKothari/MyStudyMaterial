@@ -1,0 +1,26 @@
+CTRL+SHIFT+O -> import libraries
+
+Synchronized: to provide intrensic lock on the objects, so that one will wait for other thread to complete.
+Volatile: to make variable visible to all threads and prevent caching
+
+java.util.concurrent
+To run 2 threads and perform task 2 times -> object of thread and then t.start()
+but if want to run task multiple times say 5 times using 2 threads, then use executor interface. by using its sub interfaces and classes:
+https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ExecutorService.html
+.shutdown -> to shut down the threads, 
+.awaitTermination -> to wait till all existing threads stop after shutdown.
+
+
+Countdown Cache:
+
+
+Producer - consumer:
+Whe want to run 2 threads on single data type(Queue etc) without using synchronize:
+1 thread will be producer and other one consumer.
+
+ReentrantLock: lock which ca be locked multiple times, to unlock this, need to unock it that many times as locked.
+Condition interface : for signal and await on reentrant lock.
+
+to prevent deadlock we can use trylock function of reenterant locks class.
+
+

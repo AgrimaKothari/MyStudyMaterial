@@ -1,0 +1,35 @@
+
+
+linkText: text present in link(displayed on webpage)
+partial linktext: partial text present in link(displayed on webpage)
+
+By.CssSelector(tagName#idValue)
+By.CssSelector(tagName.classValue)
+
+
+
+Selenium grid:
+firewall settings should be off for creating hub
+
+selenium--standalone-jar should be present on all machines such as host nd nodes
+    -keep at same place in all machines
+
+create hub[CMD 1]:
+step1   go to folder where selenium jar is placed
+step2   write below command:
+            java -jar selenium-server-stanalone-.....jar -role hub
+o//p:   node should register to http://19......<some url>
+        selenium grid hub is up and running
+
+in second CMD
+step 1 same
+step2 write below command:
+            java -D webdriver.chrome.driver=<path where driver is stored> -jar selenium-server-stanalone-.....jar -role node -hub <some url>
+
+which node to run:
+1. ip address
+2. which browser
+3. what  is ur OS
+
+set desiredcapabilities
+WebDriver driver = new remoteWebdriver()

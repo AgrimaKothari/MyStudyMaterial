@@ -1,0 +1,9 @@
+Priority on id and name; avoid usage of class
+multiple attribute can be used to identify any element
+.//input[@name='lang' and @type = 'radio']
+                    OR
+.//input[@name='lang'][@type = 'radio']
+
+contains:
+//tagname[contains(@id,'value')]
+//tagname[contains(text(),'value')]

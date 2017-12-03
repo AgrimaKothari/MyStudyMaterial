@@ -1,0 +1,74 @@
+MAVEN_HOME =/usr/bin/mvn
+
+Maven clean: - to clean maven project
+
+Maven build... :
+clean - to clean the proj ; deletes target folder
+compile - compile source files; creates .class file inside target folder
+test-compile: compiles test files.; creates test-classes folder inside target; test.class file creaed
+test : runs the test file; surefire reporst are created inside target folder; txt and xml file is generated
+TO CREATE JAR FILE
+install: creates jar file for our project.
+
+*******************************************************
+Using command line
+mvn clean
+mvn compile
+mvn test-compile
+mvn test
+mvn install
+
+*****************************************************
+Heirchey of commands in MAVEN BUILD LIFECYCLE:
+Validate
+compile
+test
+package
+integration-test
+verify : CHECK FOR VERIFICATION AND MEETS QUALITY CRITERIA
+install
+deploy : copies to external repository
+*****************************************************************
+TRANSITIVE DEPENDENCY: dependency of dependency.
+ctrl+hover on dpendency to view transitive dependency for this.
+********************************************************************
+exclude transitive dependency : //maven/remove transit dependency.png
+*****************************************************************
+SCOPE OF DEPENDENCY:
+Add tag <SCOPE> below version in dependency; eg: <SCOPE>test</SCOPE>
+various options:
+compile - default
+runtime - only req for run time and not in compile class path
+provided - container to provide dependency at run time.
+import etc.
+************************************************************************
+
+Add plugins:
+Maven compiler plugin:
+Maven surefire plugin:
+ 
+
+ <build>
+    <pluginManagement>
+      <plugins>
+<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.7.0</version>
+          <configuration>
+            <source>1.8</source>
+<target>1.8</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.20.1</version>
+<configuration>
+            <includes>
+<exclude>**/*Runner.java</exclude></includes>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>

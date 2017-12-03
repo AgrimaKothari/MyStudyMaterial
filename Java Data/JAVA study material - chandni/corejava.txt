@@ -1,0 +1,1494 @@
+Core Java  (5 days) (15 hours)
+---------------------------------------
+1.Core Java Bascis ( OOPs) ( 6 hours)
+2.Exception Handling
+3.IO
+4.Collection
+5.Threading
+6.JDBC
+
+
+day1     (3-5-2017)
+------------------------
+Java
+           JavaSE ->Java Standard Edition -> Stand alone / Desktop Application
+           JavaEE ->Java Enterprise Edition-> Business/Enterpirse  Application
+           JavaME ->Java Micro Edition  -> Remote and Wireless Applications
+
+
+C Language
+----------------
+1.System dependent
+2.Procedural Language 
+3.Top down approach
+4.Unable to handle large amount of data
+5.No templates
+
+f1(){}
+
+f2(){}
+
+f3(){}
+
+
+Java
+-------
+1.Platform Independent
+===================
+
+  Demo.c ->compiler ->Demo.obj ->linker ->Demo.exe ->Windows OS
+                                                                      Demo.exe  ->Linux OS   (Not possible)
+
+
+Object & Class
+=======
+Object & Class consists of some properties and some behavoiurs
+
+Actor
+         proerties : name,age,height
+         behaviours :act ,sing,dance,fight,run
+
+Class  :doesn't exist physically
+Object :exist physically
+
+
+
+Class   => Objects
+======================================
+Actor   => Amitabh,Dharmendra,Rajesh Khanna
+Tiffin  => Idly, Dosa, Puri
+Flower =>Rose
+Singer=>Rafi,Lata,Kishire,Mukesh
+Funrniture => Table,Chair
+Animal  =>Dog,Cat,Horse
+========================================
+
+class Person{
+//properties are represtend by variables
+    String  name;
+    int age;
+
+//behaviour is represented by method
+   public void talk(){
+   System.out.println("Hello I am "+name);
+   System.out.println("My Age is "+age);
+  }
+
+}
+
+
+To Create a Object
+================
+
+Person   p=new Person();
+
+p.name="Pradeep";
+p.age=34;
+p.talk();
+
+Encapsulation
+============
+It is a mechanism of wrapping of data members and code to access 
+that data members inside a signle unit such as class so that the data 
+is safe from outside interference and consequently data security will be achieved.
+
+class Employee  {                              class Project  {                     class Company {
+int id;                                                    int id;                                    int id;
+String name;                                        String name;                        String name;
+
+//setter and getter                             //setter and getter                     //setter and getter
+
+}                                                         }                                              }
+
+
+e                                                            p                                              c
+
+e.id=456;                                            p.id=234;                                 c.id-432;
+
+
+Even though we use same varibale name or same method name in multiple classes
+they will not be overloaded.
+
+
+Inheritance
+=========
+  It's a mechanism of accessing the properties and behaviours of one class 
+ into another class without redefining that class.
+
+Grand Father -->Father --> Child
+
+                                           Employee (id,name)
+                                                 |
+                                                 |
+              ---------------------------------------------------------------------
+              |                                  |                                                 |
+       Manager                        Accountant                              Programmer
+
+
+
+class Employee{
+int id;
+String name;
+//setter  and getter method
+}
+
+class Manager extends Employee {.....}
+class Accountant extends Employee {....} 
+class Programmer extends Employee {.....}
+
+Manager m=new Manager();
+
+m.id=101;
+m.name="Sachin";
+
+
+Reusability of the code.
+
+
+Polymorphism
+============
+Poly ->Many
+Morphism ->forms
+
+It's a abilty to take more than one form.
+
+Mobile :
+
+sum(10,12);
+sum(10,12,34);
+sum(10,12,45,67);
+
+Abstraction
+---------------
+It's a mechanism of showing the essential features and hiding the implementation details
+by reducing the complexity and providing the more interactivity to the user.
+
+
+Message Communication
+---------------------------------
+It's a mechanism of passing the data drom one class to another class.  
+
+3.Secured
+----------------
+    Java doesn't support pointers explicitly as well as It uses builtin security layers. 
+
+4.Roboust
+--------------
+    Robust programs are the programs which will never crash easily.
+   Java Programs will never crash easily because of exception handling
+   and memory management features.
+
+5.Mutithreaded
+--------------------
+      Executing different parts of the same programs simultaneously 
+      is called multthreading.   
+
+      Developing the games
+      Animations
+     Server Side Programs
+
+Prerequiste of Java Application Development
+====================================
+JDK (Java Development Kit)  =JRE+ Java tools
+
+JVM  (Java Virtual Machine)
+
+JRE  (Java Rutime Environement)  = JVM + rt.jar +java,javaw,javaws
+
+
+You want to develop a new Java Application from scratch  yo required JDK 
+
+You want to execute already developed and compiled Java Application then only JRE is sufficeint
+
+
+Note  :
+
+ If we don't initialize the instance variable or data members in the class
+ JVM will provide the default values for them.
+
+Java Datatypes                Default Values
+
+byte
+short                                     0
+int
+long
+
+float                                       0.0
+double
+
+char                                      unicode char
+
+boolean                                 false
+ 
+any class/interface                null
+
+
+Constructor
+----------------
+
+*	Constructor is similar to method which is used to initialise the	 data members.
+
+*      Constructor name is same as class name
+
+*     Constructor doesnot have any return type even void also
+
+*    Constructor can be overloaded like methods.
+
+
+ Constructors are of two types
+  -----------------------------------
+
+default constructor
+------------------------
+The constructor without  parameter is called default constructor 
+         
+default constructor executes automatically               whenever object is created to the class
+             
+
+Parameterised Constructor
+----------------------------------
+			The constructor with  parameters  is called
+			parameterised constructor 
+              
+			  parameterised constructor executes automatically
+               whenever parameters are initialised to the 
+			   object.
+              
+
+Advantages
+-----------------
+1.Constructor executes faster than methods.
+2.Constructor name can be remembred easily.
+
+
+
+Note:-
+		If  we didnot write any costructor JVM will add
+		default costructor with default values
+
+
+What is the difference between default constructor
+and parameterised constructor?
+--------------------------------------------------------------------
+The default constructor is used to initialise all the objects with same data.
+
+The parameterised  constructor is used to initialise all the objects with different data.
+*/
+
+
+
+Assignments
+===========
+Develop Applications to calculate area and peri of 
+
+Square : side  ->area,peri
+Rectangle :length,breadth  ->area,peri 
+Triangle  : a,b,c ->area ,peri,
+
+Develop Applications to calculate volume of 
+
+cylinder -> radius,height  ->volume            PI*radius*radius*height
+
+sphere  -> radius       -> volumne             (4/3)PI*radius*radius*radius 
+ 
+
+
+
+day2  (4-5-2017)
+------------------------
+Types of methods in Java
+---------------------------------
+
+1.Instance method
+         Method which acts on the instance variables of the class is called as 
+         instance method.
+
+    syntax  : instancename.methodname();
+
+		a.Accessor method
+                                         Accessor method only reads the properties of object.
+                                Ex. getter methods 
+
+ 		b.Mutator method
+                                        Mutator method not only reads the properties of object but also modify.
+
+                                Ex. Setter methods
+
+2.Static method
+------------------------
+          --------------
+	Static method is a method which can be called without
+	creating an object to the class.
+
+	Static method recieves only static data members
+     
+	static is a keyword to define static method.
+    
+	static void display()
+	{
+	----
+	----
+	}
+
+static method can be called by 
+
+Classname.methodname();
+
+
+
+static variable   vs  instance variable 
+===========================
+static variable copy is one per class
+
+instance variable copy is one per instance
+
+
+3.Factory method
+-------------------------
+  Factory Method is a method which returns the object of that class to which it belongs.
+
+NumberFormat nf=NumberFormat.getNumberInstance();
+
+Class c=Class.forName("java.lang.String");
+
+Thread t=Thread.currentThread();
+
+
+
+
+4.Final method
+--------------------
+
+final key word is used define constants.
+
+
+final int MAX=45; 
+
+
+final class  A{
+void m1(){}
+void m2(){}
+void m3(){}
+}
+
+
+
+
+ class  A{
+void m1(){}
+final void m2(){}
+final void m3(){}
+}
+
+* final keyword before class prevents inheritance
+
+*final methods cannot be overridenn
+
+* final variables cannot be modified 
+
+
+
+
+Inheritance
+--------------
+In java Object is the default super class for all classes
+
+toString =>to convert any object to String
+
+equals =>comapring the objects
+
+hashCode  ->It's a unique Id given by JVM for each and every object. 
+
+
+equals and hashcode
+
+               a          b
+
+
+             a and b should be of same type
+             a.hashcode ==b.hashcode  =true 
+             a.equals(b)  =true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abstract method
+===========
+abstract method
+---------------------
+A abstract method is a method without body.
+
+abstract method must be declred as abstract.
+
+'abstract class' is class that contains abstract methods as well as non abstract methods
+
+abstract class must also be declared as abstract.
+
+we cannot create object to abstract class because abstract class is incompletet class.
+
+From abstract class derive another class where abstract methods must be implemented,
+then we can create an object to that	 class 
+
+* A class with 0 or  more abstract methods is
+   called as abstract class.
+
+* An abstract class can have general methods and abstract
+   methods also
+
+*An abstract class can have an instance variables
+
+*we cannot create object to abstract class
+
+*But we can create referece to abstract class
+
+*The abstract methods of abstract class must be
+  implemented in the sub class
+
+*If any abstract method is not implemented then subclass 
+  must be declared as abstract
+
+*Abstract class reference can be used to refer the
+  objects of it's subclass
+
+*Abstract class reference cannot be used to refer the
+   the individual methods of sub class
+
+
+                                Animal
+                                       makeNoise()
+
+
+Dog                                 Cat                         Horse
+
+makeNoise()         makeNoise()                makeNoise()
+
+
+Multiple Inheritance is not avialble in Java ?
+
+i.e   class A extends B,C,D{...... }
+
+
+interface
+------------
+interface
+--------------
+An Interface is a specification of method prototype.
+
+All the methods of interface are abstract and public by default.
+
+we cannot create object to interface but we can create a 
+reference variable.
+
+syntax
+-----------
+interface  <interface_name>
+{
+method1();
+method2();
+}
+
+Implemetation class
+-----------------------------
+                In implementation class all the methods of interface 
+		are written with method body.Implementation class is 
+		a complete class because it has methods with method 
+		body.
+
+
+class  <implementationclass_name>  implements <interface_name>
+{
+method1()
+{}
+method2()
+{}
+} 
+
+An interface is specification of method prototype.
+
+An interface contains 0 or more abstract methods
+
+1. An interface contains methods which are all public 
+     and abstract by default
+
+2.we cannot have general methods in interface
+
+3.we can have variable in a interface which are public ,static
+  and final by default
+
+4. we cannot create object to interface but we can create
+  reference to an interface
+
+5.All the methods of interface must be implemented in 
+  another class
+
+6.If any one method is not implemented then that class must be
+  declared as abstract
+
+7.The reference of the interface can be used to refer the object 
+ of implementation class
+
+8.An interface  cannot implements another interface
+
+9.An iterface can extend another interface
+
+10.A class can implement sevral interfaces
+
+
+11.Once the interface is written any body(third party vendor) 
+     can implement it
+
+What is the diffrence between abstract class and interface ?
+
+A programmer uses a abstract class when there
+are some general features shared by all objects.
+
+A programmer uses an interface when all the features are
+implemented differently for different objects.
+
+                                           Employee
+
+Programmer                  Accountant                   Manager
+
+
+p                                         a                                   m
+
+
+
+p instanceof Employee   => true
+p instanceof Programmer   =>true
+p instanceof Manager   =>false
+p instanceof Accountant   =>false
+p instanceof Object   => true
+
+
+Assignment
+---------------
+                                                         Instrument
+                                                               play()
+
+Flute                                            Guitar                                     Piano
+
+
+
+Assignment
+-------------
+
+
+
+
+
+                                                        Compartment
+                                                                 notice()
+
+Luggage                      Ladies              General       
+
+
+Develop a Clauclator Application
+
+
+
+Day3  (5/5/2017)
+----------------------
+1.Exception Handaling 
+2.String,StringBuffer,StringBuilder classes,Wrapper classes
+3.Java5 and Java7 features
+
+
+                String                                       StringBuffer                                    StringBuilder
+
+1.   Immutable                                           Mutable                                           Mutable
+2.  ThreadSafe                                        Threadsafe                                      Not Threadsafe
+
+
+Immutable objects are the objects whose contents cannot be modified
+
+mutable objects are the objects whose contents can  be modified
+
+
+
+Java5
+--------
+1.Scanner
+2.StringBuilder
+3.ForEach
+4.Var Args
+
+5.Auto boxing and unboxing
+       boxing :converting primitive data types in to object is called boxing
+       un boxing :converting object in to primitive  is called unboxing
+
+    int i=10;  
+   
+    Integer ii=new Integer(i) ;  //boxing
+    int v=ii.intValue() ;  //unbxoing
+
+   float f=4.56;
+   Float ff=new Float(f);  //boxing
+   float v1=ff.floatValue(); //unboxing
+
+
+
+
+From Java 5
+==========
+ Integer a=100; // autobxoxing
+ int b=a;   //auto unboxing 
+
+ 6.Generics
+==========
+Generics are type saftey
+
+Generic class  :  class with type parameter is called Generic class
+Generic Method :method with type parameter is called Genenric Method
+
+
+5.enums
+
+
+
+
+Java7
+-------
+1.MultiCatch try 
+2.try with resources
+3.switch case with string
+4.under-score in the int literal
+5.binary,hex,octal format
+6.Diamond operator
+
+/*
+
+What is a bug ?
+----------------------
+	The error commited in a program  is called bug.
+
+	Removing error is called as debugging.
+
+There are three types of errors
+
+1.Compile time errors
+-----------------------------
+				These errors represent inprpoer use of syntax 
+				or grammer language.
+
+				These errors are detected by compiler
+
+class Err
+{
+public static void main(String s[])
+{
+System.out.println("Hello")  // error 
+}
+}
+
+
+
+
+
+2.Runtime errors
+-----------------------
+			These are the errors occurs due to illegal operations.
+			These errors are detected by JVM
+
+class Err
+{
+public static void main()
+{
+System.out.pritln("Hello");
+}
+}
+
+Most of run time errors are called exceptions
+
+Removing runtime errors is difficult.
+
+3. Logical errors
+-----------------------
+		These errors are commited in a logic of the program.
+		
+		Logical errors are not detected by compiler or JVM.
+		
+                                  Programmer is responsible for logical errors.
+		
+class Err
+{
+public static void main(String s[])
+{
+int a=100;
+int b=20;
+
+System.out.println("Addition ="+(a-b));
+}
+}
+
+By compairing o/p with maually calculated 
+results you can detect/suspect  logical errors
+
+
+
+Exception
+----------------
+			An  Exception is rutime error.
+
+
+
+Errors can not be handled.
+
+Exceptions can be handled.
+
+
+Exception  handeling
+----------------------------
+
+When there is an exeception in java the program
+will be terminated in the middle,so already opened files
+or databases might not be closed,leading to destruction
+of data on the system.
+
+							In case of an Exception
+	programmer has to perform the follwowig tasks.
+	
+	1.Display exception details
+
+	2.Display message to the user
+
+	3.Close the files in databases
+
+	Performig the above task is nothing but Exception 
+	handeling.
+
+	Exception handeling is done by try,catch,& finally block
+
+
+syntax:-
+----------			
+				try
+				{
+				statements;
+				}
+				catch(Exception obj)
+				{
+				statements;
+				}
+				finally
+				{
+				statements;
+				}
+
+
+try catch finally
+try catch
+try finally 
+
+
+1.  try block contains the statements which are examined      for any exception
+
+2.When there is an exception JVM stores exception details in    stack  and jumps into catch block.
+
+		In catch block we should display exception details 
+		to the user & also any general message.
+
+3.finally block contains the statements that executes even
+  though there is exception or not.
+  
+  */
+
+try catch finally
+try catch
+try finally
+
+
+What are checked and uchecked exceptions?
+----------------------------------------------------
+The exceptions which are caught 
+by java compiler are called as checked 
+excption 
+
+The exceptions which are caught by JVM
+are called as unchecked excption 
+
+
+What is the difference between error and
+Exception ?
+------------------------------------------------------------------
+An exception is an error which is
+handled by prorammer
+
+The errors cannot be handled 
+by programmer
+
+Every exception is represented as
+class in java
+ 
+				java.lang.Throwable
+                                                                            |              
+			 ------------------------------------------------------
+			 |                                                               |
+           		             Error	                                              Exception
+     		                |                                                                |
+                                          --------------------                                    ---------------------
+                                        |    |    |   |      |      |                                     |       |    |    |      |    |
+                                           All error classes                                 All Exception classes
+
+
+
+Exception is a super class for all 
+exception subclassees
+
+Error is a super class for all 
+error subclasses  
+
+Any  abnormal event in the program is called
+an exception
+
+*/	 
+
+class Err
+{
+public static void main()
+{
+System.out.println("Hello");
+}
+}
+
+Types of Exceptions
+------------------------
+
+1.Builtin Exceptions
+--------------------------
+
+These exceptions are  part of java
+
+1.ArithmeticException
+
+2.ArrayIndexOutOfBoundsException
+
+3.StringIndexOutOfBoundsException
+
+4.FileNotFoundException
+
+5.NoSuchMethodException
+
+6.NullPointerException
+
+7.InterruptedException
+
+8.IOException
+
+9.RuntimeException
+
+2.Userdefined Exception
+----------------------------------
+			These Exceptions are created by user
+
+
+1.Write a class that extends Exception class
+
+2.write default costructor in the class
+
+3.write a parameterised constructor with string as a    parameter
+
+4.create an object to your class and throw it out using
+  throw clause when required
+
+
+day4
+=====
+             1.Threading
+             ===========
+
+Multitasking
+
+                 Process based  : Executing different programs simultaneously .
+
+                                                  While driving talking on mobile                                  
+
+
+                Thread based    :Executing different parts of the same program simultaneously.
+ 
+                                         While driving changin geras increasing speed applycing breaks
+
+Thread
+--------------
+			Thread represents a process or execution
+			of the statement.
+			
+
+			JVM uses internally threads to run a java
+			programs.
+
+			Every java program will have  a
+			thread
+				
+java.lang.Thread
+-------------------------
+
+Thread Class methods
+-------------------------------
+1.To know the currently running Thread
+------------------------------------------------------
+
+	Thread t=Thread.currentThread();
+
+2. To start a Thread
+-----------------------------
+		t.start();
+
+3.To stop execution of thread for a specified time.
+--------------------------------------------------------
+
+		Thread.sleep(millisecond);
+
+4.To execute some code using  a thread,write it in  run method
+------------------------------------------
+
+public void run()
+{
+code
+}
+
+5.To get the name of Thread
+-------------------------------------
+
+		String  name=t.getName();
+
+6.To set a new name to a thread
+-------------------------------------------
+			t.setName("name");
+
+7.To get priority of thread
+------------------------------------
+
+   int  priority_no=t.getPriority();
+   
+8.To set the priority of thread
+---------------------------------------
+
+		t.setPriority(int priority);
+
+The priority no. costants ar given below
+
+Thread.MAX_PRIORITY value is 10
+Thread.MIN_PRIORITY value is 1
+Thread.NORM_PRIORITY value is 5
+
+9. To test if a thread is still alive are not
+------------------------------------------------------
+                     boolean b=t.isAlive()
+
+10.To wait till a Thread dies
+----------------------------------------
+				t.join();
+
+
+
+
+
+Thread
+--------------
+			Thread represents a process or execution
+			of the statement.
+			
+			JVM uses internally threads to run a java
+			programs.
+
+			Every java program will have  a
+			thread
+				
+Handeling the task is of two types
+
+1.Single tasking
+---------------------
+Processing only one task at a time is 
+called as Single tasking. 
+
+In single tasking processing time is more.
+Microprocssor will be ideal for most of the time.
+The time of processor will not be used effectively.
+
+2.Multitasking
+---------------------
+Processig different tasks at a time is called Multitasking.
+			
+		After completing last task coming to first task is called Round Robin.
+
+1. Process based multitasking
+----------------------------------------
+Executing  several programs simultaneously is called process based multitaskig.
+
+2. Thread based multitasking
+----------------------------------------
+Executing  several parts of  programs simultaneously is called Thread based multitaskig.
+
+IIQ
+-------
+Where the threads are useful?
+
+1.Threads are used in animation & creating the games.
+
+2.Threads are used in server to handle 100000's of clients..
+
+In multithreading the processor time is used in optimum way 
+
+we can create threads by using Thread class or Runnable iterface
+
+
+Creating a thread
+----------------------------
+
+1.  Extend Thread class or implement Runnable
+     interface.
+
+	 Example
+
+	 class MyThread extends Thread{...........}
+
+	class MyThread implements Runnable{...........}
+
+2.Write run method with code inside it
+
+		public void run()
+		{
+
+                                }
+
+3.Create an object to class  and attach a thread to it.
+
+MyThread obj=new MyThread();
+
+Thread t=new Thread(obj);
+
+4. Call start method 
+		t.start();
+*/
+
+
+Develop a Java Application to create thread for printing numbers from 1 to 10.
+
+
+
+
+
+
+MIIQ
+
+What is Thread Synchroisation?
+------------------------------------------
+	When a thread is processing an object,
+	keeping other threads waiting till the first
+	thread comes out of the object is called Thread synchronization.
+
+
+
+
+InterThreadCommunication
+------------------------------------
+
+wait ,notify, notifyAll  in Object class
+
+
+these methods must be called from synchronized context only
+
+else It will throw IllegalMonitorStateException
+
+
+
+
+
+
+
+
+
+InteruptedException     (Checked)
+IllegalMonitorStateException  (Unchecked)
+IllegalThreadStateExcedption (Unchecked)
+
+
+
+
+
+
+
+
+2.collections
+===========
+/*
+If you want to store a group of elements at one place convenient procedure is Array
+
+  java.util.Collection (I)
+  ==================
+
+add
+remove
+search
+get
+size
+removeAll
+sort
+
+
+
+ArrayList
+======= 
+            ArrayList <String> arl=new ArrayList<>();
+
+       arl.add("RAM");
+       arl.add("RAHIM");
+       arl.add("DAVID");
+       arl.add(1,"PRADEEP");
+       arl.set(1,"RAKESH");
+       arl.remove(2); 
+
+
+                                          [0,1,2,3,4,5,6,7,8,9]
+                                          RAM RAHIM DAVID
+
+                                          RAM PRADEEP RAHIM DAVID
+
+
+        LinkedList
+
+           Node1      =>     Node2  =>         Node3
+
+
+                         NodeX
+
+
+
+ArrayList       :good for one time insertion and many time retrivel
+LinkList         :good for manipulation
+Vector           :Similar to arraylist but it is thread safe                        
+
+
+
+If you want to store a group of objects in specific mannner  
+		
+Example
+-------------
+	A company has 1000 employees
+
+then you have to create 1000 objects
+
+To process them ,you have to write 1000 lines of code
+
+If you can store all the objects in a single object then
+this can represent all the objects.
+
+Convenient mechaism to store group of objects in 
+single object
+
+
+Collection or Container object
+----------------------------------------
+				It is an object that contains group of objects.
+
+Collection or Container class
+----------------------------------------
+				It is class whose object  contains group of objects.
+
+A group of collection class is available in java.util
+package
+
+
+What is collection framework
+--------------------------------------
+				It is a class library to handle group of objects.
+Collection framework is implemented in    java.util package
+
+util stands for utiliy
+
+
+Collection class  object can store a group/collection of other objects.
+
+Collection classes can't hadle premitive datatypes.
+
+
+Assignments
+============
+1.Write a Program to accpet a sentence from keyboard and find out number of words in that sentence.
+
+hint :   String sentence=sc.nextLine();   Hello How Are You?
+                           Number of words =4
+
+
+2.Write a Program to accpet 2 string from the user and findout common characters  from that two words
+
+String s1=sc.next();    //pradeep
+String s2=sc.next();   //pramod
+
+Common chars  :     p r a d
+
+3.Write a Program to accpet a sentence from keyboard and display word and no of occurances of that word in sentence
+
+hint :   String sentence=sc.nextLine();    Hello How Are you Good bye Hello  (use map) 
+
+Hello     2
+How     1
+Are       1
+you      1
+Good   1
+bye      1
+
+------------------
+
+
+day5
+------------------
+  java.io (Input/Output)
+
+
+
+
+Stream
+----------
+			A stream represents flow of data or sequence of bytes that travels from one place to another place.
+			
+			keyboard->memory
+
+                                                 memory->monitor
+
+			memory->printer
+
+			memory->file
+              
+InputStream :-  Reads or recieves the data
+
+OutputStream :- writes or sends the data
+
+
+
+Every  stream is  represented as class in  java.io package
+
+	Note :-
+	--------
+
+Byte Stream
+Character Stream
+
+
+
+
+InputStream  and OutputStream
+-------------------------------------------
+
+	To handle the data in the form of bytes  the abstract  classes (InputStream and OutputStream)  are used. 
+
+						        	InputStream
+    							       |
+         					     -------------------------------------------------------
+        					      |                                 |                                      |
+					FileInputStream    FilterInputStream   ObjectInputStream
+                         					                      |
+                   					          ----------------------------
+						        |                                    |
+       						  BufferedInputStream         DataInputStream  
+
+																
+							OutputStream
+    							        |
+             						 -------------------------------------------------------
+           						   |                                  |                                      |
+					FileOutputStream FilterOutputStream ObjectOutputStream
+                                        						       |
+                            						 ----------------------------
+							 |                                    |
+     						    BufferedOutputStream         DataOutputStream  
+Note
+--------
+FileInputStream and FileOutputStream
+----------------------------------------------------			
+			To read and write the data to
+			disk files we use 
+			FileInputStream and FileOutputStream
+
+
+FilterInputStream /FilterOutputStream
+--------------------------------------------------
+				To read and write the data to
+				another streams 
+				 use
+				FilterInputStream 
+				and FilterOutputStream
+
+ObjectInputStream/ObjectOutputStream
+----------------------------------------------------
+				To handle storage of objects and premitive datatypes
+
+DataInputStream/DataOutputStream
+----------------------------------------------------
+				To handle primitive data types
+
+
+
+
+Note :
+--------
+	To handle data in the form of text abstract classes Reader and Writer  are used  
+
+		Reader
+                                         |
+           ------------------------------------------------------------------------------
+            |                              |                                       |                     |
+BufferedReader    CharArrayReader     InputStreamReader    PrintReader
+                                                                                  |
+																	     FileReader
+
+
+		   Writer
+                                         |
+           -----------------------------------------------------------------------------------
+       |                              |                                       |                                |
+BufferedWriter    CharArrayWriter     OutputStreamWriter                PrintWriter
+                                                                                  |
+																	     FileWriter
+
+BufferedReader/Writer
+-------------------------------
+	Handles the text by buffering them.
+	They provides 	efficiency.
+	It stores the data into buffer. Once it is full
+	 data will be read from it
+
+CharArrayWriter/CharArrayReader
+------------------------------------------------
+	Handles the array of characters
+
+InputStreamReader/Writer
+----------------------------------
+	They bridge bufferedwriter byte streams and
+	character streams.Reader reads the bytes and
+	decoded them into 16bit unicode characters
+
+			Writer decodes characters into bytes 
+			and then
+			writes.
+
+PrintReader/Writer
+------------------------
+	Handles printing of characters on the screen or moitor.
+*/
+
+
+
+Source ->InputStream  -> Keyboard,File,Socket,Process,Thread
+
+
+Sink  ->OutputStream ->File,Socket,Process,Thread
+
+
+
+
+
+
+ObjectOutputStream  :  write object    //Serialization
+            
+void writeObject(Object object);
+
+
+ObjectInputStream  :read object    //DeSerialization
+
+Object readObject()
+
+
+java.io.Serializable   is Marker i/f  (no methods)
+
+
+
+
+
+1.Develop A Application to PErform Follwing Operation On Account Object
+
+
+Map <Integer,Account>  map=new HAshMap<Integer,Account>();
+
+
+
+1.Add Account
+2.Delete Account
+3.Show Account
+4.Show All Accounts
+5.Withdraw Amount
+6.Deposit Amout
+7.Transfer Fund
+8.Sort Accounts By Accno
+9.Exit
+
+
+io
+
+IOException
+    |                                           checked exception
+FileNotFoundException  
+
+NotSerializableException         uncheked exception
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

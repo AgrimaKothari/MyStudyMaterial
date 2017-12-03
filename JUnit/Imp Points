@@ -1,0 +1,30 @@
+Basic annotations:
+@Test:
+(timeout =2)||(expected=NullPointerException.class)
+@Before
+@After
+@BeforeTest
+@AfterTest
+@Ignore
+@Rule: can be used in place of @before and @after collectively to create and destroy dynamic memory
+        need to extend TestCase class to avoid Initialization error 
+
+==============================================================================================
+Parameterization: Running test with multiple test data
+1.  @RunWith(Parameterized.class): this should be there before class
+2.  Create a static method with returntype as Collections: and this should return a 2D array having input parameter and final answer required for assertion 
+and this should have annotation as @Parameterized.Parameters
+3.  To use parameterization, Constructor is called for test class, So need to define a public parameterizeed consturctor of test class with both the values of 2d array as parameters to it.
+==============================================================================================
+Testing private methods: using reflection: changing behaviour of code at runTime: import package->"java.lang.reflect.Method"
+    Object ob == clas.getInstance()
+        Method method = null;
+    		
+		method = clas.getDeclaredMethod("incrementedNumber", Integer.TYPE);
+		method.setAccessible(true);
+		object=method.invoke(ob, 1);
+		
+		assertEquals(object,11);
+================================================================================================
+Concurrency error using junit
+Create threads in jUnit test class

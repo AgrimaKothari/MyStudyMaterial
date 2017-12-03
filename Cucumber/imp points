@@ -1,0 +1,8 @@
+For parameterization:
+variable name in ""
+
+For running cucumber in Maven below dependencies are required
+Selenium maven dependencey
+junit maven dependency
+cucumber junit dependency
+cucumber core dependency

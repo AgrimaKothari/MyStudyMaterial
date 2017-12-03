@@ -1,0 +1,29 @@
+Annotations
+
+can use below attribute along with @Test
+Priority
+dependsOnMethod={}
+enabled
+alwaysRun
+groups={}
+==========================================================================================================
+SOFT ASSERTION
+create objectof softAssert class, and call assert methods there: All steps get executed here without throwing any exception, in order to get exception i.e test case as fail, call assertAll() at the end of test case
+==========================================================================================================
+PARALLEL EXECUTION
+in config.xml file add parallel="type" in suite tag
+type could be anything like classes to run multiple classes parallely, or tests for running tests in parallel
+==========================================================================================================
+PARAMETERIZATION
+can be done using .xml file or @dataProvider
+
+Using .xml file
+Add a tag in .xml file <parameter name="varName" value="val">
+and an annotaion below @test such as @Parameters("VarName")
+
+Using DataProvider
+Create a new method with annotation as @DataProvider(name = "identiifier")
+this identifier to be used in @Test of the method which requires parameterization: Such as:
+        @Test(dataProvider="data")
+Run with simple .xml file or directly
+===============================================================================================================

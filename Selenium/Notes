@@ -1,0 +1,19 @@
+webDriver driver = new FirefoxDriver()
+
+Different types of elements:
+checkbox, button -> .click()
+drop down -> select s = new Select(dropdown object)
+    s.selectByIndex
+    s.selectByValue
+    s.selectByVisibleText
+input feilds -> sendkeys
+==================================================================================
+Screen shot in selenium
+TakesScreenshot -> interface
+type case your driver object to TakesScreenshot
+
+	TakesScreenshot ts = (TakesScreenshot)driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		//System.out.println(source.getPath());
+		FileUtils.copyFile(source, new File("<destination file location>"));
+		System.out.println("ss done");

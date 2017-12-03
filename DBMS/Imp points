@@ -1,0 +1,23 @@
+Install MySQL:
+sudo apt install mysql-server
+
+to start:
+mysql -u root -p
+<enter password>
+
+start sql server: sudo service mysql start
+status of sql server: sudo service mysql status
+
+show databases;
+use mysql {selected from list of available databases}
+show tables;
+
+install workbench:
+sudo apt-get install mysql-workbench
+
+
+Type of Attributes:
+Single valued , multi valued
+simple , composite(can further be divided inte simple)
+stored, derived( derived from stored attribute) 
+complex
